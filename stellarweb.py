@@ -31,14 +31,20 @@ app = Flask(__name__)
 driver = None
 
 def create_webdriver():
-    """Chrome WebDriver'ı oluşturur."""
     from selenium.webdriver.chrome.options import Options
+    from selenium import webdriver
     chrome_options = Options()
-    chrome_options.add_argument("--start-maximized")
-    chrome_options.add_argument("--disable-extensions")
+    chrome_options.add_argument("--headless")  # GUI olmadan çalışır
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--disable-gpu")
-    driver = webdriver.Chrome(options=chrome_options)
-    return driver
+    try:
+        driver = webdriver.Chrome(options=chrome_options)
+        print("ChromeDriver successfully initialized")
+        return driver
+    except Exception as e:
+        print(f"Error initializing ChromeDriver: {str(e)}")
+        raise
 
 def highlight_elements(driver):
     """Sayfadaki öğeleri vurgular."""
