@@ -1,7 +1,7 @@
 # Stellarweb - AI-Powered Web Automation Platform
 
 **Date:** March 08, 2025  
-**Author:** [Your name or alias here]  
+**Author:** [Bocecix]  
 
 Stellarweb is an AI-powered web automation platform. Built with Flask, it provides a web interface to receive user commands, leverages Anthropic’s Claude model to analyze them, and executes actions in a web browser using Selenium. Inspired by a space theme, its name reflects its goal to shine brightly in the realm of web automation.
 
