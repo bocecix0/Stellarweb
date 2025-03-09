@@ -1,0 +1,6 @@
+flask
+selenium
+anthropic
+cryptography
+python-dotenv
+gunicorn
